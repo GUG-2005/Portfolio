@@ -17,11 +17,11 @@
   /* Accent & Borders */
   --color-accent: #d2691e;
   --color-border: #e0d0c0;
-  --color-shadow: rgba(92, 61, 46, 0.15);
+  --color-shadow: rgb(92 61 46 / 15%);
 
   /* Typography */
-  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-heading: Georgia, serif;
+  --font-primary: 'Segoe UI', tahoma, geneva, verdana, sans-serif;
+  --font-heading: georgia, serif;
   --font-size-base: 16px;
   --font-size-h1: 2.5rem;
   --font-size-h2: 2rem;
