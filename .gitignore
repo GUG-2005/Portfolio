@@ -19,9 +19,7 @@ node_modules/
 # Lighthouse reports (generated)
 .lighthouseci/
 lighthouse/
-package-lock.json
-package.json
-stylelint.config.js
+
 
 # Temporary files
 *.tmp
