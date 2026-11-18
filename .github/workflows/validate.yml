@@ -27,4 +27,5 @@ jobs:
         run: htmlhint "**/*.html" --config .htmlhintrc
 
       - name: Validate CSS files
-        run: csslint "**/*.css" --quiet
+        run: find . -type f -name "*.css" -print0 | xargs -0 -r csslint --quiet
+            
