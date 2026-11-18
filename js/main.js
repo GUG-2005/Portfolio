@@ -57,5 +57,44 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
   
-  
+   // ===== Lightbox for Hobbies =====
+  const lightbox = document.getElementById('lightbox');
+  const lightboxTitle = document.querySelector('.lightbox-title');
+  const lightboxDesc = document.querySelector('.lightbox-desc');
+  const lightboxIcon = document.querySelector('.lightbox-icon');
+  const lightboxClose = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const title = item.dataset.title || 'Hobby';
+      const desc = item.dataset.desc || '';
+      const icon = item.dataset.icon || '🎨';
+
+      if (lightboxTitle) lightboxTitle.textContent = title;
+      if (lightboxDesc) lightboxDesc.textContent = desc;
+      if (lightboxIcon) lightboxIcon.textContent = icon;
+      if (lightbox) lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    if (lightbox) lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
 });
