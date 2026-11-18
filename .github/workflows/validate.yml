@@ -20,12 +20,11 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install validation tools
-        run: |
-          npm install -g htmlhint stylelint stylelint-config-standard
+      - name: Install dependencies
+        run: npm ci
 
       - name: Validate HTML files
-        run: htmlhint "**/*.html" --config .htmlhintrc
+        run: npx htmlhint "**/*.html" --config .htmlhintrc
 
       - name: Validate CSS files
-        run: stylelint "**/*.css" --quiet
+        run: npx stylelint "**/*.css" --quiet
